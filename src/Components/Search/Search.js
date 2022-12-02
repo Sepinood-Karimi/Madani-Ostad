@@ -1,3 +1,4 @@
+
 const Search = ({placeholder}) => {
     return (
         <form>
