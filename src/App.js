@@ -1,12 +1,15 @@
 import './App.css';
 import NavBar from "./Components/Header/NavBar";
+import Card from "./Components/UI/Card";
 
 function App() {
     return (
         <>
-            <header>
-                <NavBar/>
-            </header>
+            <Card>
+                <header>
+                    <NavBar/>
+                </header>
+            </Card>
         </>
     );
 }
