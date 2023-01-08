@@ -1,0 +1,31 @@
+.main {
+    margin-top: 150px;
+}
+
+.main h1 {
+    color: #4a5568;
+}
+
+.main p {
+    color: #4a5568;
+    margin: 8px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+}
+
+.uni-button{
+    background-color: #4a5568;
+    margin-right: 10px;
+}
+
+.aside{
+    margin-top: 100px;
+}
+
+.buttons{
+    margin-top: 30px;
+}
