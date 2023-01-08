@@ -13,3 +13,7 @@
     border-color: #8592a5;
     background-color: transparent;
 }
+
+.search-button i {
+    margin-left: 0;
+}
