@@ -1,6 +1,8 @@
+import classes from './Button.module.css';
+
 const Button = ({children}) => {
     return (
-        <button>
+        <button className={classes.button}>
             {children}
         </button>
     );
