@@ -1,6 +1,7 @@
 import Button from "../UI/Button";
 import Search from "../Search/Search";
 import classes from './NavBar.module.css';
+import mainClasses from '../UI/common.module.css';
 
 const NavBar = () => {
     return (
@@ -15,9 +16,9 @@ const NavBar = () => {
             <Search placeholder="دنبال کدوم استاد می گردی ؟"/>
             <nav className={classes.navbar}>
                 <Button>ورود <i className="fa fa-user" aria-hidden="true"></i></Button>
-                <a> دانشکده ها </a>
-                <a> تماس با ما </a>
-                <a> ثبت نام </a>
+                <a className={mainClasses['hand-cursor']}> دانشکده ها </a>
+                <a className={mainClasses['hand-cursor']}> تماس با ما </a>
+                <a className={mainClasses['hand-cursor']}> ثبت نام </a>
             </nav>
         </header>
     );

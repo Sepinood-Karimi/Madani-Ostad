@@ -1,4 +1,5 @@
 import classes from './Faculties.module.css';
+import mainClasses from '../../UI/common.module.css';
 import Faculty from "./Faculty/Faculty";
 
 const Faculties = () => {
@@ -11,7 +12,7 @@ const Faculties = () => {
                 <div>
                     <div className={classes['faculties-main-titles']}>
                         <h3 className={classes['faculties-main-title']}>دانشکده ها</h3>
-                        <h4 className={classes['faculties-suggestion']}> پیشنهاد دانشکده جدید</h4>
+                        <h4 className={classes['faculties-suggestion'] + ' ' + mainClasses['hand-cursor']}> پیشنهاد دانشکده جدید</h4>
                     </div>
                     <p className={classes['faculties-explanation']}> لیست دانشکده ها و اساتید رو میتونی این جا ببینی</p>
                 </div>
