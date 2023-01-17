@@ -1,0 +1,42 @@
+.faculties-title{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 120px;
+}
+
+.faculties-icon i{
+    color: white;
+    background-color: #4a5568;
+    padding: 30px;
+    font-size: 1.5rem;
+}
+
+.faculties-main-titles{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+}
+
+.faculties-main-title{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    font-weight: normal;
+    font-size: 1.35rem;
+    color: #4a5568;
+}
+
+.faculties-suggestion{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 72px;
+    font-weight: normal;
+    font-size: 0.95rem;
+    color: #68d391;
+}
+
+.faculties-explanation{
+    margin:0 22px;
+    font-size: 0.95rem;
+    color: #8592a5;
+}
