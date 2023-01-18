@@ -1,4 +1,5 @@
 import classes from './ContactUs.module.css';
+import ContactUsSVG from "../../SVG/ContactUsSVG";
 
 const ContactUs = () => {
     return (
@@ -10,8 +11,12 @@ const ContactUs = () => {
                 <h4 className={classes['contact-us__title']}>ارتباط با ما </h4>
                 <p className={classes['contact-us__description']}>برای ارتباط با تیم پشتیبانی وبسایت ، از فرم زیر اقدام کنید . مرسی اه</p>
             </div>
+            <div>
+                <ContactUsSVG/>
+            </div>
         </section>
     );
 };
 
 export default ContactUs;
+
