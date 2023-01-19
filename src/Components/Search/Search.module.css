@@ -1,6 +1,6 @@
 .search-button{
-    padding: 5px 12px;
-    margin-right:-14%;
+    padding: 4px 12px;
+    margin-right:-13.5%;
 }
 
 .search-input{
@@ -10,8 +10,13 @@
     font-size: 15px;
     padding: 5px 10px 5px 80px;
     border-radius: 25px;
-    border-color: #8592a5;
+    border : 1px solid #8592a5;
     background-color: transparent;
+    direction: rtl;
+}
+
+.search-input:focus{
+    outline: none;
 }
 
 .search-button i {

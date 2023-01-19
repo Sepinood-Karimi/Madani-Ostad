@@ -1,5 +1,5 @@
 import classes from './Faculties.module.css';
-import mainClasses from '../../UI/common.module.css';
+import mainClasses from '../../UI/Common/common.module.css';
 import Faculty from "./Faculty/Faculty";
 
 const Faculties = () => {

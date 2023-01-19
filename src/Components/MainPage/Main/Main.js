@@ -1,4 +1,4 @@
-import Button from "../../UI/Button";
+import Button from "../../UI/Button/Button";
 import classes from './Main.module.css';
 import MainPageSVG from "../../../SVG/MainPageSVG";
 

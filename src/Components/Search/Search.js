@@ -1,5 +1,5 @@
 import '../../font-awesome/css/font-awesome.min.css';
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import classes from "./Search.module.css";
 
 const Search = ({placeholder}) => {

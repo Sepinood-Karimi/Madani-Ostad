@@ -1,7 +1,7 @@
-import Button from "../UI/Button";
+import Button from "../UI/Button/Button";
 import Search from "../Search/Search";
 import classes from './NavBar.module.css';
-import mainClasses from '../UI/common.module.css';
+import mainClasses from '../UI/Common/common.module.css';
 
 const NavBar = () => {
     return (
