@@ -1,7 +1,7 @@
 import classes from "./ContactUs.module.css";
-import ContactUsSVG from "../../SVG/ContactUsSVG";
-import Input from "../UI/Input/Input";
-import Form from "../UI/Form/Form";
+import ContactUsSVG from "../../../SVG/ContactUsSVG";
+import Input from "../../UI/Input/Input";
+import Form from "../../UI/Form/Form";
 
 const ContactUs = () => {
   const submitButtonText = (
@@ -58,4 +58,3 @@ const ContactUs = () => {
 };
 
 export default ContactUs;
-
