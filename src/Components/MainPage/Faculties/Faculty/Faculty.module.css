@@ -1,4 +1,4 @@
-.faculty{
+.faculty {
     background-color: #ffffff;
     width: 22%;
     padding: 40px 0;
@@ -7,20 +7,20 @@
     border-radius: 5px;
 }
 
-.teachers{
+.teachers {
     direction: rtl;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.faculty-title{
+.faculty-title {
     margin-bottom: 0;
     margin-right: 70px;
     color: #4a5568;
 }
 
-.faculty-name{
+.faculty-name {
     margin-right: 120px;
     margin-top: 0;
     margin-bottom: 50px;
@@ -28,13 +28,13 @@
     font-weight: bolder;
 }
 
-.teacher{
+.teacher {
     width: 50%;
     margin-bottom: 10px;
     color: #4a5568;
 }
 
-.all-teachers{
+.all-teachers {
     margin: 30px 105px 0 0;
     color: #68d391;
 }

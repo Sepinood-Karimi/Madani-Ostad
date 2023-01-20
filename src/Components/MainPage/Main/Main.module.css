@@ -11,21 +11,21 @@
     margin: 8px;
 }
 
-.main-container{
+.main-container {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
 }
 
-.uni-button{
+.uni-button {
     background-color: #4a5568;
     margin-right: 10px;
 }
 
-.aside{
+.aside {
     margin-top: 100px;
 }
 
-.buttons{
+.buttons {
     margin-top: 30px;
 }

@@ -1,24 +1,24 @@
-.faculties-title{
+.faculties-title {
     display: flex;
     flex-direction: row-reverse;
     margin-top: 120px;
     margin-bottom: 25px;
 }
 
-.faculties-icon i{
+.faculties-icon i {
     color: white;
     background-color: #4a5568;
     padding: 30px;
     font-size: 1.5rem;
 }
 
-.faculties-main-titles{
+.faculties-main-titles {
     display: flex;
     flex-direction: row-reverse;
     align-items: baseline;
 }
 
-.faculties-main-title{
+.faculties-main-title {
     display: inline-block;
     margin-bottom: 10px;
     margin-right: 20px;
@@ -27,7 +27,7 @@
     color: #4a5568;
 }
 
-.faculties-suggestion{
+.faculties-suggestion {
     display: inline-block;
     margin-bottom: 10px;
     margin-right: 72px;
@@ -36,13 +36,13 @@
     color: #68d391;
 }
 
-.faculties-explanation{
-    margin:0 22px;
+.faculties-explanation {
+    margin: 0 22px;
     font-size: 0.95rem;
     color: #8592a5;
 }
 
-.faculties{
+.faculties {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap;
