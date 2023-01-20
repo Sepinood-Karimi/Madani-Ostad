@@ -4,7 +4,10 @@ import Input from "../UI/Input/Input";
 import Form from "../UI/Form/Form";
 
 const ContactUs = () => {
-    const submitButtonText = <i className="fa fa-paper-plane" aria-hidden="true"> ارسال </i>;
+    const submitButtonText = <>
+        ارسال
+        <i className="fa fa-paper-plane" aria-hidden="true"/>
+    </>;
     return (
         <section className={classes['contact-us']}>
             <div className={classes['contact-us__subject']}>
