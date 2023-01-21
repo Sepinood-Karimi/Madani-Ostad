@@ -2,10 +2,14 @@ import Button from "../UI/Button/Button";
 import Search from "../Search/Search";
 import classes from "./NavBar.module.css";
 import mainClasses from "../UI/Common/common.module.css";
+import { useContext } from "react";
+import modalContext from "../../store/modal-context";
 
-const NavBar = ({ onShowLogin }) => {
+const NavBar = () => {
+  const modalCtx = useContext(modalContext);
+
   const showLogin = () => {
-    onShowLogin();
+    modalCtx.openModal();
   };
   return (
     <header className={classes.header}>
