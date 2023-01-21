@@ -4,7 +4,9 @@ import classnames from "classnames";
 const Input = ({ id, labelText, type, placeHolder, className }) => {
   return (
     <>
-      <label htmlFor={id}>{labelText}</label>
+      <label htmlFor={id} className={classnames(classes.label)}>
+        {labelText}
+      </label>
       <input
         type={type}
         id={id}

@@ -4,9 +4,9 @@
     top: 200px;
     right: 500px;
     left: 500px;
-    bottom: 100px;
+    bottom: 150px;
     border-radius: 5px;
-    padding: 30px;
+    padding: 10px 30px;
 }
 
 .overlay{

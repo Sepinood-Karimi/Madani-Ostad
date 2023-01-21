@@ -1,10 +1,12 @@
 import Button from "../Button/Button";
+import LongButton from "../Button/LongButton";
 
-const Form = ({ children, buttonText, className }) => {
+const Form = ({ children, buttonText, className, long }) => {
   return (
     <form className={className}>
       {children}
-      <Button>{buttonText}</Button>
+      {long && <LongButton>{buttonText}</LongButton>}
+      {!long && <Button>{buttonText}</Button>}
     </form>
   );
 };

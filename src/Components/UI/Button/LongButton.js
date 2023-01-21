@@ -1,8 +1,8 @@
-import classes from "./Button.module.css";
+import classes from "./LongButton.module.css";
 import mainClasses from "../Common/common.module.css";
 import classnames from "classnames";
 
-const Button = ({ children, className, onClickButton }) => {
+const LongButton = ({ children, className, onClickButton }) => {
   const onButtonClick = () => {
     onClickButton();
   };
@@ -10,7 +10,7 @@ const Button = ({ children, className, onClickButton }) => {
   return (
     <button
       className={classnames(
-        classes["button"],
+        classes["long-button"],
         className,
         mainClasses["hand-cursor"]
       )}
@@ -21,4 +21,4 @@ const Button = ({ children, className, onClickButton }) => {
   );
 };
 
-export default Button;
+export default LongButton;

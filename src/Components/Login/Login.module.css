@@ -1,0 +1,31 @@
+.login-title{
+    text-align: center;
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+.login-description{
+    text-align: center;
+    color: #8592a5;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.login-form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.login-input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.login-signup{
+    color: #68d391;
+    margin-right: 207px;
+    margin-bottom: 0;
+}
