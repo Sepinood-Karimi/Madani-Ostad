@@ -1,18 +1,12 @@
 import Modal from "../UI/Modal/Modal";
 import Input from "../UI/Input/Input";
-import { useContext } from "react";
-import ModalContext from "../../store/modal-context";
 import classes from "./Login.module.css";
 import classnames from "classnames";
 import Form from "../UI/Form/Form";
 
 const Login = () => {
-  const modalCtx = useContext(ModalContext);
-  const closeLogin = () => {
-    modalCtx.closeModal();
-  };
   return (
-    <Modal onClose={closeLogin}>
+    <Modal additionalModalClasses={classnames(classes["login-modal"])}>
       <p className={classnames(classes["login-title"])}>ورود به سایت</p>
       <p className={classnames(classes["login-description"])}>
         با ورود به سایت میتونی به اساتید نمره بدی و کامنت بذاری
@@ -21,6 +15,7 @@ const Login = () => {
         buttonText="ورود"
         className={classnames(classes["login-form"])}
         long={true}
+        additionalClassNames={classnames(classes["login-button"])}
       >
         <Input
           id="email"

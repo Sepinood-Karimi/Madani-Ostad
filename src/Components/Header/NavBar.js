@@ -2,15 +2,8 @@ import Button from "../UI/Button/Button";
 import Search from "../Search/Search";
 import classes from "./NavBar.module.css";
 import mainClasses from "../UI/Common/common.module.css";
-import { useContext } from "react";
-import modalContext from "../../store/modal-context";
 
 const NavBar = () => {
-  const modalCtx = useContext(modalContext);
-
-  const showLogin = () => {
-    modalCtx.openModal();
-  };
   return (
     <header className={classes.header}>
       <div>
@@ -22,7 +15,7 @@ const NavBar = () => {
       </div>
       <Search placeholder="دنبال کدوم استاد می گردی ؟" />
       <nav className={classes.navbar}>
-        <Button onClickButton={showLogin}>
+        <Button>
           ورود <i className="fa fa-user" aria-hidden="true"></i>
         </Button>
         <a className={mainClasses["hand-cursor"]}> دانشکده ها </a>

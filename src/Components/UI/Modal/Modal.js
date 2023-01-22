@@ -2,22 +2,21 @@ import classnames from "classnames";
 import classes from "./Modal.module.css";
 import { createPortal } from "react-dom";
 
-const Overlay = ({ children, onOverlayClick }) => {
-  const onClickOverlay = () => {
-    onOverlayClick();
-  };
+const Overlay = ({ children, additionalModalClasses }) => {
   return (
-    <div className={classnames(classes.overlay)} onClick={onClickOverlay}>
-      <div className={classnames(classes.modal)}>{children}</div>
+    <div className={classnames(classes.overlay)}>
+      <div className={classnames(classes.modal, additionalModalClasses)}>
+        {children}
+      </div>
     </div>
   );
 };
-const Modal = ({ children, onClose }) => {
-  const onCloseModal = () => {
-    onClose();
-  };
+const Modal = ({ children, additionalModalClasses }) => {
   return createPortal(
-    <Overlay onOverlayClick={onCloseModal} children={children} />,
+    <Overlay
+      children={children}
+      additionalModalClasses={additionalModalClasses}
+    />,
     document.getElementById("overlays")
   );
 };

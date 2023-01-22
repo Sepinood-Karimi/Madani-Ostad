@@ -4,16 +4,14 @@ import Main from "./Components/MainPage/Main/Main";
 import Faculties from "./Components/MainPage/Faculties/Faculties";
 import ContactUs from "./Components/MainPage/Contact-us/ContactUs";
 import "../src/font-awesome/css/font-awesome.min.css";
-import { useContext } from "react";
-import Login from "./Components/Login/Login";
-import ModalContext from "./store/modal-context";
+// import Login from "./Components/Login/Login";
+// import SignUp from "./Components/SignUp/SignUp";
 
 function App() {
-  const modalCtx = useContext(ModalContext);
-
   return (
     <>
-      {modalCtx && <Login />}
+      {/*<Login />*/}
+      {/*<SignUp />*/}
       <NavBar />
       <Main />
       <Faculties />

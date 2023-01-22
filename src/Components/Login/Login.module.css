@@ -1,3 +1,10 @@
+.login-modal{
+    top:200px;
+    right: 500px;
+    left: 500px;
+    bottom: 150px;
+}
+
 .login-title{
     text-align: center;
     font-size: 18px;
@@ -28,4 +35,8 @@
     color: #68d391;
     margin-right: 207px;
     margin-bottom: 0;
+}
+
+.login-button{
+    margin-right: 12px;
 }
