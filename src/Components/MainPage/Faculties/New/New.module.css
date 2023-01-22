@@ -1,0 +1,46 @@
+.new-modal {
+    top: 250px;
+    right: 500px;
+    bottom: 200px;
+    left: 500px;
+}
+
+.new-title {
+    text-align: center;
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 0;
+}
+
+.new-description {
+    text-align: center;
+    color: #8592a5;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.new-description-two {
+    text-align: center;
+    color: #8592a5;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.new-form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+.new-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+
+.new-button{
+    padding: 10px 180px;
+    margin-right: 5px;
+}
