@@ -4,6 +4,9 @@ import classes from "./NavBar.module.css";
 import mainClasses from "../UI/Common/common.module.css";
 
 const NavBar = () => {
+  const openLoginModal = () => {
+    console.log("open login");
+  };
   return (
     <header className={classes.header}>
       <div>
@@ -15,7 +18,7 @@ const NavBar = () => {
       </div>
       <Search placeholder="دنبال کدوم استاد می گردی ؟" />
       <nav className={classes.navbar}>
-        <Button>
+        <Button buttonAction={openLoginModal}>
           ورود <i className="fa fa-user" aria-hidden="true"></i>
         </Button>
         <a className={mainClasses["hand-cursor"]}> دانشکده ها </a>
