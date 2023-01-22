@@ -2,11 +2,7 @@ import classes from "./Button.module.css";
 import mainClasses from "../Common/common.module.css";
 import classnames from "classnames";
 
-const Button = ({ children, className, onClickButton }) => {
-  const onButtonClick = () => {
-    onClickButton();
-  };
-
+const Button = ({ children, className }) => {
   return (
     <button
       className={classnames(
@@ -14,7 +10,6 @@ const Button = ({ children, className, onClickButton }) => {
         className,
         mainClasses["hand-cursor"]
       )}
-      onClick={onButtonClick}
     >
       {children}
     </button>
