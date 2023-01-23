@@ -7,13 +7,11 @@ import "../src/font-awesome/css/font-awesome.min.css";
 // import AllTeachers from "./Components/MainPage/Faculties/Faculty/Teachers/AllTeachers/AllTeachers";
 // import NewTeacher from "./Components/MainPage/Faculties/New/NewTeacher";
 // import NewFaculty from "./Components/MainPage/Faculties/New/NewFaculty";
-// import Login from "./Components/Login/Login";
 // import SignUp from "./Components/SignUp/SignUp";
 
 function App() {
   return (
     <>
-      {/*<Login />*/}
       {/*<SignUp />*/}
       {/*<NewFaculty />*/}
       {/*<NewTeacher />*/}

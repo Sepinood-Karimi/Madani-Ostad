@@ -4,9 +4,13 @@ import classes from "./Login.module.css";
 import classnames from "classnames";
 import Form from "../UI/Form/Form";
 
-const Login = () => {
+const Login = ({ isOpen, closeModal }) => {
   return (
-    <Modal additionalModalClasses={classnames(classes["login-modal"])}>
+    <Modal
+      isOpen={isOpen}
+      additionalModalClasses={classnames(classes["login-modal"])}
+      closeModal={closeModal}
+    >
       <p className={classnames(classes["login-title"])}>ورود به سایت</p>
       <p className={classnames(classes["login-description"])}>
         با ورود به سایت میتونی به اساتید نمره بدی و کامنت بذاری
