@@ -4,10 +4,14 @@ import Input from "../../../UI/Input/Input";
 import classnames from "classnames";
 import classes from "./New.module.css";
 
-const NewFaculty = () => {
+const NewFaculty = ({ isOpen, close }) => {
   return (
     <>
-      <Modal additionalModalClasses={classnames(classes["new-modal"])}>
+      <Modal
+        additionalModalClasses={classnames(classes["new-modal"])}
+        isOpen={isOpen}
+        closeModal={close}
+      >
         <p className={classnames(classes["new-title"])}>پیشنهاد دانشکده جدید</p>
         <p className={classnames(classes["new-description"])}>
           لطفا دانشکده مورد نظر خود را از طریق فرم زیر به ما پیشنهاد بدین تا به

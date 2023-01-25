@@ -1,8 +1,11 @@
 import classes from "./Faculties.module.css";
 import mainClasses from "../../UI/Common/common.module.css";
 import Faculty from "./Faculty/Faculty";
+import NewFaculty from "./New/NewFaculty";
+import useBooleanState from "../../../Hooks/use-BooleanState";
 
 const Faculties = () => {
+  const newFaculty = useBooleanState();
   return (
     <section>
       <div className={classes["faculties-title"]}>
@@ -18,13 +21,12 @@ const Faculties = () => {
                 " " +
                 mainClasses["hand-cursor"]
               }
+              onClick={() => newFaculty.open()}
             >
-              {" "}
               پیشنهاد دانشکده جدید
             </h4>
           </div>
           <p className={classes["faculties-explanation"]}>
-            {" "}
             لیست دانشکده ها و اساتید رو میتونی این جا ببینی
           </p>
         </div>
@@ -38,6 +40,7 @@ const Faculties = () => {
         <Faculty />
         <Faculty />
       </div>
+      <NewFaculty {...newFaculty} />
     </section>
   );
 };
