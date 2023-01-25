@@ -4,12 +4,14 @@ import Modal from "../../../../../UI/Modal/Modal";
 import allTeachersClasses from "./AllTeachers.module.css";
 import classnames from "classnames";
 
-const AllTeachers = () => {
+const AllTeachers = ({ isOpen, close, openNewTeacherModal }) => {
   return (
     <Modal
       additionalModalClasses={classnames(
         allTeachersClasses["all-teachers__modal"]
       )}
+      isOpen={isOpen}
+      closeModal={close}
     >
       <div>
         <p className={classes["faculty-title"]}>دانشکده</p>
@@ -51,6 +53,7 @@ const AllTeachers = () => {
         </ul>
         <p
           className={classes["all-teachers"] + " " + mainClasses["hand-cursor"]}
+          onClick={openNewTeacherModal}
         >
           پیشنهاد استاد جدید
         </p>
