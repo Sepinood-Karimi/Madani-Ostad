@@ -6,17 +6,6 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import useBooleanState from "../../Hooks/use-BooleanState";
 
-// function useBooleanState(defaultValue = false) {
-//   const [value, setValue] = useState(defaultValue);
-//
-//   return {
-//     open: () => setValue(true),
-//     close: () => setValue(false),
-//     isOpen: value,
-//     toggle: () => setValue((value) => !value),
-//   };
-// }
-
 const NavBar = () => {
   const loginModal = useBooleanState();
   const signUpModal = useBooleanState();
