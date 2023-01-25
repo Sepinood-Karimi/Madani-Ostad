@@ -1,8 +1,11 @@
 import Button from "../../UI/Button/Button";
 import classes from "./Main.module.css";
 import MainPageSVG from "../../../SVG/MainPageSVG";
+import useBooleanState from "../../../Hooks/use-BooleanState";
+import SignUp from "../../SignUp/SignUp";
 
 const Main = () => {
+  const signUpModal = useBooleanState();
   return (
     <div className={classes["main-container"]}>
       <main className={classes.main}>
@@ -20,7 +23,7 @@ const Main = () => {
           <Button className={classes["uni-button"]}>
             دانشکده ها<i className="fa fa-university" aria-hidden="true"></i>
           </Button>
-          <Button>
+          <Button buttonAction={signUpModal.open}>
             ثبت نام کنید <i className="fa fa-user" aria-hidden="true"></i>
           </Button>
         </div>
@@ -28,6 +31,7 @@ const Main = () => {
       <aside className={classes.aside}>
         <MainPageSVG />
       </aside>
+      <SignUp {...signUpModal} />
     </div>
   );
 };

@@ -3,14 +3,23 @@ import Search from "../Search/Search";
 import classes from "./NavBar.module.css";
 import mainClasses from "../UI/Common/common.module.css";
 import Login from "../Login/Login";
-import { useState } from "react";
+import SignUp from "../SignUp/SignUp";
+import useBooleanState from "../../Hooks/use-BooleanState";
+
+// function useBooleanState(defaultValue = false) {
+//   const [value, setValue] = useState(defaultValue);
+//
+//   return {
+//     open: () => setValue(true),
+//     close: () => setValue(false),
+//     isOpen: value,
+//     toggle: () => setValue((value) => !value),
+//   };
+// }
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const closeLogin = () => {
-    setIsOpen(false);
-  };
+  const loginModal = useBooleanState();
+  const signUpModal = useBooleanState();
   return (
     <header className={classes.header}>
       <div>
@@ -22,14 +31,15 @@ const NavBar = () => {
       </div>
       <Search placeholder="دنبال کدوم استاد می گردی ؟" />
       <nav className={classes.navbar}>
-        <Button buttonAction={() => setIsOpen(true)}>
+        <Button buttonAction={loginModal.open}>
           ورود <i className="fa fa-user" aria-hidden="true"></i>
         </Button>
         <a className={mainClasses["hand-cursor"]}> دانشکده ها </a>
         <a className={mainClasses["hand-cursor"]}> تماس با ما </a>
-        <a className={mainClasses["hand-cursor"]}> ثبت نام </a>
+        <a className={mainClasses["hand-cursor"]}>ثبت نام</a>
       </nav>
-      <Login isOpen={isOpen} closeModal={closeLogin} />
+      <Login {...loginModal} />
+      <SignUp {...signUpModal} />
     </header>
   );
 };

@@ -5,10 +5,14 @@ import Form from "../UI/Form/Form";
 import Input from "../UI/Input/Input";
 import signUpClasses from "./SignUp.module.css";
 
-const SignUp = () => {
+const SignUp = ({ isOpen, close }) => {
   return (
     <>
-      <Modal additionalModalClasses={classnames(signUpClasses["signUp-modal"])}>
+      <Modal
+        additionalModalClasses={classnames(signUpClasses["signUp-modal"])}
+        isOpen={isOpen}
+        closeModal={close}
+      >
         <p className={classnames(classes["login-title"])}>ثبت نام در سایت</p>
         <p className={classnames(classes["login-description"])}>
           برای بهره مندی از امکانات سایت، ثبت نام کنید
