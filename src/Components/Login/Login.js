@@ -3,8 +3,9 @@ import Input from "../UI/Input/Input";
 import classes from "./Login.module.css";
 import classnames from "classnames";
 import Form from "../UI/Form/Form";
+import commonClasses from "../UI/Common/common.module.css";
 
-const Login = ({ isOpen, close }) => {
+const Login = ({ isOpen, close, openSignUpModal }) => {
   return (
     <Modal
       isOpen={isOpen}
@@ -34,7 +35,15 @@ const Login = ({ isOpen, close }) => {
           className={classnames(classes["login-input"])}
         />
       </Form>
-      <p className={classnames(classes["login-signup"])}>ثبت نام</p>
+      <p
+        className={classnames(
+          classes["login-signup"],
+          commonClasses["hand-cursor"]
+        )}
+        onClick={openSignUpModal}
+      >
+        ثبت نام
+      </p>
     </Modal>
   );
 };

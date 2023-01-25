@@ -4,8 +4,9 @@ import classes from "../Login/Login.module.css";
 import Form from "../UI/Form/Form";
 import Input from "../UI/Input/Input";
 import signUpClasses from "./SignUp.module.css";
+import commonClasses from "../UI/Common/common.module.css";
 
-const SignUp = ({ isOpen, close }) => {
+const SignUp = ({ isOpen, close, openLoginModal }) => {
   return (
     <>
       <Modal
@@ -50,7 +51,15 @@ const SignUp = ({ isOpen, close }) => {
             className={classnames(classes["login-input"])}
           />
         </Form>
-        <p className={classnames(classes["login-signup"])}>ورود</p>
+        <p
+          className={classnames(
+            classes["login-signup"],
+            commonClasses["hand-cursor"]
+          )}
+          onClick={openLoginModal}
+        >
+          ورود
+        </p>
       </Modal>
     </>
   );

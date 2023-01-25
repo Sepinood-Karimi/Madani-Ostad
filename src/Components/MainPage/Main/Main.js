@@ -3,9 +3,20 @@ import classes from "./Main.module.css";
 import MainPageSVG from "../../../SVG/MainPageSVG";
 import useBooleanState from "../../../Hooks/use-BooleanState";
 import SignUp from "../../SignUp/SignUp";
+import Login from "../../Login/Login";
 
 const Main = () => {
+  const loginModal = useBooleanState();
   const signUpModal = useBooleanState();
+  const openLoginModal = () => {
+    signUpModal.close();
+    loginModal.open();
+  };
+
+  const openSignUpModal = () => {
+    loginModal.close();
+    signUpModal.open();
+  };
   return (
     <div className={classes["main-container"]}>
       <main className={classes.main}>
@@ -31,7 +42,8 @@ const Main = () => {
       <aside className={classes.aside}>
         <MainPageSVG />
       </aside>
-      <SignUp {...signUpModal} />
+      <Login {...loginModal} openSignUpModal={openSignUpModal} />
+      <SignUp {...signUpModal} openLoginModal={openLoginModal} />
     </div>
   );
 };

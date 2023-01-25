@@ -9,6 +9,15 @@ import useBooleanState from "../../Hooks/use-BooleanState";
 const NavBar = () => {
   const loginModal = useBooleanState();
   const signUpModal = useBooleanState();
+  const openLoginModal = () => {
+    signUpModal.close();
+    loginModal.open();
+  };
+
+  const openSignUpModal = () => {
+    loginModal.close();
+    signUpModal.open();
+  };
   return (
     <header className={classes.header}>
       <div>
@@ -32,8 +41,8 @@ const NavBar = () => {
           ثبت نام
         </a>
       </nav>
-      <Login {...loginModal} />
-      <SignUp {...signUpModal} />
+      <Login {...loginModal} openSignUpModal={openSignUpModal} />
+      <SignUp {...signUpModal} openLoginModal={openLoginModal} />
     </header>
   );
 };
