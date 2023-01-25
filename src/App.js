@@ -1,18 +1,13 @@
 import "./App.css";
-import NavBar from "./Components/Header/NavBar";
-import Main from "./Components/MainPage/Main/Main";
-import Faculties from "./Components/MainPage/Faculties/Faculties";
-import ContactUs from "./Components/MainPage/Contact-us/ContactUs";
 import "../src/font-awesome/css/font-awesome.min.css";
+import { Route, Routes } from "react-router";
+import MainPage from "./Pages/MainPage";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Main />
-      <Faculties />
-      <ContactUs />
-    </>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+    </Routes>
   );
 }
 
