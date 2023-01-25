@@ -25,7 +25,12 @@ const NavBar = () => {
         </Button>
         <a className={mainClasses["hand-cursor"]}> دانشکده ها </a>
         <a className={mainClasses["hand-cursor"]}> تماس با ما </a>
-        <a className={mainClasses["hand-cursor"]}>ثبت نام</a>
+        <a
+          className={mainClasses["hand-cursor"]}
+          onClick={() => signUpModal.open()}
+        >
+          ثبت نام
+        </a>
       </nav>
       <Login {...loginModal} />
       <SignUp {...signUpModal} />
