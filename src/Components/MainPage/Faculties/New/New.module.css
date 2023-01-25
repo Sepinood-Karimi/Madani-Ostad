@@ -1,8 +1,6 @@
 .new-modal {
-    top: 250px;
-    right: 500px;
-    bottom: 200px;
-    left: 500px;
+    max-width: 500px;
+    width: 100%;
 }
 
 .new-title {
@@ -41,6 +39,5 @@
 
 
 .new-button{
-    padding: 10px 180px;
-    margin-right: 5px;
+    width: 100%;
 }

@@ -1,10 +1,8 @@
 .signUp-modal{
-    top:100px;
-    right: 500px;
-    left: 500px;
-    bottom: 100px;
+    max-width: 450px;
+    width: 100%;
 }
 
 .signUp-button{
-    margin-right: 5px;
+    width: 100%;
 }

@@ -1,6 +1,36 @@
 .all-teachers__modal{
-    top: 130px;
-    bottom: 200px;
-    right: 550px;
-    left: 600px;
+    max-width: 340px;
+    width: 100%;
+}
+
+.title{
+    color: #4a5568;
+    margin-right: 75px;
+    margin-bottom: 3px;
+}
+
+.faculty-name{
+    color: #4a5568;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.teachers{
+    display: flex;
+    flex-wrap: wrap;
+    direction: rtl;
+}
+
+.teacher{
+    width: 50%;
+    margin-bottom: 20px;
+    color: #4a5568;
+}
+
+.new-teacher{
+    width: 100%;
+    text-align: center;
+    color: #68d391;
 }

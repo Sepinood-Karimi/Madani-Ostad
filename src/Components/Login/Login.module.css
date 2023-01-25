@@ -1,8 +1,6 @@
 .login-modal{
-    top:200px;
-    right: 500px;
-    left: 500px;
-    bottom: 150px;
+    max-width: 450px;
+    width: 100%;
 }
 
 .login-title{
@@ -33,10 +31,11 @@
 
 .login-signup{
     color: #68d391;
-    margin-right: 207px;
-    margin-bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .login-button{
-    margin-right: 12px;
+    width: 100%;
 }
