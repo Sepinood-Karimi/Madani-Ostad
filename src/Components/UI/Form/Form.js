@@ -7,12 +7,16 @@ const Form = ({
   className,
   long,
   additionalClassNames,
+  buttonActions,
 }) => {
   return (
-    <form className={className}>
+    <form className={className} onSubmit={(e) => e.preventDefault()}>
       {children}
       {long && (
-        <LongButton additionalClassNames={additionalClassNames}>
+        <LongButton
+          additionalClassNames={additionalClassNames}
+          onClickButton={buttonActions}
+        >
           {buttonText}
         </LongButton>
       )}
