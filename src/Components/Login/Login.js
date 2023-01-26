@@ -32,6 +32,10 @@ const Login = ({ isOpen, close, openSignUpModal }) => {
       const data = await response.json();
       if (response.ok) {
         loginCtx.login(data.access_token);
+      } else {
+        loginCtx.loading = false;
+        loginCtx.error = data.errors;
+        console.log(loginCtx.error[0]);
       }
     } catch (e) {}
     loginCtx.loading = false;
