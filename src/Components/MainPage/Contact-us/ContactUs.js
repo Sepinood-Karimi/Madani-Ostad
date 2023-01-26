@@ -2,6 +2,8 @@ import classes from "./ContactUs.module.css";
 import ContactUsSVG from "../../../SVG/ContactUsSVG";
 import Input from "../../UI/Input/Input";
 import Form from "../../UI/Form/Form";
+import { useContext, useRef } from "react";
+import LoginContext from "../../../store/login-context";
 
 const ContactUs = () => {
   const submitButtonText = (
@@ -10,6 +12,40 @@ const ContactUs = () => {
       <i className="fa fa-paper-plane" aria-hidden="true" />
     </>
   );
+  const loginCtx = useContext(LoginContext);
+  const nameInputRef = useRef();
+  const messageInputRef = useRef();
+  const mobileInputRef = useRef();
+  const contactUs = async () => {
+    loginCtx.loading = true;
+    console.log({
+      name: nameInputRef.current.value,
+      message: messageInputRef.current.value,
+      mobile: mobileInputRef.current.value,
+    });
+    try {
+      const response = await fetch("https://mo.akdev.ir/api/contact", {
+        method: "POST",
+        body: JSON.stringify({
+          message: messageInputRef.current.value,
+          name: nameInputRef.current.value,
+          phone: mobileInputRef.current.value,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log(data);
+      } else {
+        loginCtx.loading = false;
+        console.log(data);
+      }
+    } catch (e) {}
+    loginCtx.loading = false;
+  };
+
   return (
     <section className={classes["contact-us"]}>
       <div className={classes["contact-us__subject"]}>
@@ -24,13 +60,14 @@ const ContactUs = () => {
         </div>
       </div>
       <div className={classes["contact-us__form"]}>
-        <Form buttonText={submitButtonText}>
+        <Form buttonText={submitButtonText} buttonActions={contactUs}>
           <Input
             id="name"
             type="text"
             labelText=""
             placeHolder="نام شما"
             className={classes["contact-us__input"]}
+            ref={nameInputRef}
           />
           <Input
             id="number"
@@ -38,6 +75,7 @@ const ContactUs = () => {
             labelText=""
             placeHolder="شماره موبایل"
             className={classes["contact-us__input"]}
+            ref={mobileInputRef}
           />
           <div>
             <label htmlFor="comment"></label>
@@ -48,6 +86,7 @@ const ContactUs = () => {
               rows="7"
               cols="92"
               className={classes["contact-us__comment"]}
+              ref={messageInputRef}
             ></textarea>
           </div>
         </Form>

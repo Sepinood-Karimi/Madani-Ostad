@@ -20,7 +20,7 @@ const Form = ({
           {buttonText}
         </LongButton>
       )}
-      {!long && <Button>{buttonText}</Button>}
+      {!long && <Button buttonAction={buttonActions}>{buttonText}</Button>}
     </form>
   );
 };
