@@ -1,15 +1,15 @@
-import classes from "./Button.module.css";
-import mainClasses from "../Common/common.module.css";
+import classes from "./RedButton.module.css";
+import mainClasses from "../../Common/common.module.css";
 import classnames from "classnames";
 
-const Button = ({ children, className, buttonAction }) => {
+const RedButton = ({ children, className, buttonAction }) => {
   const buttonClicked = () => {
     buttonAction();
   };
   return (
     <button
       className={classnames(
-        classes["button"],
+        classes["red-button"],
         className,
         mainClasses["hand-cursor"]
       )}
@@ -20,4 +20,4 @@ const Button = ({ children, className, buttonAction }) => {
   );
 };
 
-export default Button;
+export default RedButton;

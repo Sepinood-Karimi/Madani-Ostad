@@ -7,11 +7,16 @@ const LoginProvider = ({ children }) => {
     setIsLoggedIn(true);
   };
 
+  const logout = () => {
+    setIsLoggedIn(false);
+  };
+
   const loginState = {
-    login: login,
+    login,
     loading: false,
     error: {},
     isLoggedIn,
+    logout,
   };
 
   return (

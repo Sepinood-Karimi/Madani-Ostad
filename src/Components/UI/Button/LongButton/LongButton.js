@@ -1,5 +1,5 @@
 import classes from "./LongButton.module.css";
-import mainClasses from "../Common/common.module.css";
+import mainClasses from "../../Common/common.module.css";
 import classnames from "classnames";
 
 const LongButton = ({

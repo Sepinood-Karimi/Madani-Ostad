@@ -1,4 +1,4 @@
-import Button from "../UI/Button/Button";
+import Button from "../UI/Button/Button/Button";
 import classes from "./Search.module.css";
 
 const Search = ({ placeholder }) => {

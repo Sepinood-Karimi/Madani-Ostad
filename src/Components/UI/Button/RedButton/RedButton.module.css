@@ -1,0 +1,16 @@
+.red-button {
+    color: white;
+    background: #fc8181;
+    border: none;
+    padding: 10px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-size: 15px;
+    border-radius: 25px;
+}
+
+.red-button i {
+    color: white;
+    margin-left: 5px;
+}

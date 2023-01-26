@@ -1,5 +1,5 @@
-import Button from "../Button/Button";
-import LongButton from "../Button/LongButton";
+import Button from "../Button/Button/Button";
+import LongButton from "../Button/LongButton/LongButton";
 
 const Form = ({
   children,

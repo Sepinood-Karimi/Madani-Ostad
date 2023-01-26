@@ -1,11 +1,14 @@
-import Button from "../../UI/Button/Button";
+import Button from "../../UI/Button/Button/Button";
 import classes from "./Main.module.css";
 import MainPageSVG from "../../../SVG/MainPageSVG";
 import useBooleanState from "../../../Hooks/use-BooleanState";
 import SignUp from "../../SignUp/SignUp";
 import Login from "../../Login/Login";
+import { useContext } from "react";
+import LoginContext from "../../../store/login-context";
 
 const Main = () => {
+  const loginCtx = useContext(LoginContext);
   const loginModal = useBooleanState();
   const signUpModal = useBooleanState();
   const openLoginModal = () => {
@@ -34,16 +37,22 @@ const Main = () => {
           <Button className={classes["uni-button"]}>
             دانشکده ها<i className="fa fa-university" aria-hidden="true"></i>
           </Button>
-          <Button buttonAction={signUpModal.open}>
-            ثبت نام کنید <i className="fa fa-user" aria-hidden="true"></i>
-          </Button>
+          {!loginCtx.isLoggedIn && (
+            <Button buttonAction={signUpModal.open}>
+              ثبت نام کنید <i className="fa fa-user" aria-hidden="true"></i>
+            </Button>
+          )}
         </div>
       </main>
       <aside className={classes.aside}>
         <MainPageSVG />
       </aside>
-      <Login {...loginModal} openSignUpModal={openSignUpModal} />
-      <SignUp {...signUpModal} openLoginModal={openLoginModal} />
+      {!loginCtx.isLoggedIn && (
+        <>
+          <Login {...loginModal} openSignUpModal={openSignUpModal} />
+          <SignUp {...signUpModal} openLoginModal={openLoginModal} />
+        </>
+      )}
     </div>
   );
 };

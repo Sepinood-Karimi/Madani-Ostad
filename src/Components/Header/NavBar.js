@@ -1,23 +1,31 @@
-import Button from "../UI/Button/Button";
+import Button from "../UI/Button/Button/Button";
 import Search from "../Search/Search";
 import classes from "./NavBar.module.css";
 import mainClasses from "../UI/Common/common.module.css";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import useBooleanState from "../../Hooks/use-BooleanState";
+import { useContext } from "react";
+import LoginContext from "../../store/login-context";
+import RedButton from "../UI/Button/RedButton/RedButton";
 
 const NavBar = () => {
+  const loginCtx = useContext(LoginContext);
   const loginModal = useBooleanState();
   const signUpModal = useBooleanState();
   const openLoginModal = () => {
     signUpModal.close();
     loginModal.open();
   };
-
   const openSignUpModal = () => {
     loginModal.close();
     signUpModal.open();
   };
+
+  const logout = () => {
+    loginCtx.logout();
+  };
+
   return (
     <header className={classes.header}>
       <div>
@@ -29,20 +37,34 @@ const NavBar = () => {
       </div>
       <Search placeholder="دنبال کدوم استاد می گردی ؟" />
       <nav className={classes.navbar}>
-        <Button buttonAction={loginModal.open}>
-          ورود <i className="fa fa-user" aria-hidden="true"></i>
-        </Button>
+        {!loginCtx.isLoggedIn && (
+          <Button buttonAction={loginModal.open}>
+            ورود <i className="fa fa-user" aria-hidden="true"></i>
+          </Button>
+        )}
+        {loginCtx.isLoggedIn && (
+          <RedButton buttonAction={logout}>
+            خروج
+            <i className="fa fa-power-off" aria-hidden="true"></i>
+          </RedButton>
+        )}
         <a className={mainClasses["hand-cursor"]}> دانشکده ها </a>
         <a className={mainClasses["hand-cursor"]}> تماس با ما </a>
-        <a
-          className={mainClasses["hand-cursor"]}
-          onClick={() => signUpModal.open()}
-        >
-          ثبت نام
-        </a>
+        {!loginCtx.isLoggedIn && (
+          <a
+            className={mainClasses["hand-cursor"]}
+            onClick={() => signUpModal.open()}
+          >
+            ثبت نام
+          </a>
+        )}
       </nav>
-      <Login {...loginModal} openSignUpModal={openSignUpModal} />
-      <SignUp {...signUpModal} openLoginModal={openLoginModal} />
+      {!loginCtx.isLoggedIn && (
+        <>
+          <Login {...loginModal} openSignUpModal={openSignUpModal} />
+          <SignUp {...signUpModal} openLoginModal={openLoginModal} />
+        </>
+      )}
     </header>
   );
 };
