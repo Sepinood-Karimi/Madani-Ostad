@@ -1,16 +1,18 @@
 import classnames from "classnames";
 import classes from "./Modal.module.css";
 import { createPortal } from "react-dom";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import LoginContext from "../../../store/login-context";
 
 const Modal = ({ isOpen, children, additionalModalClasses, closeModal }) => {
+  const loginCtx = useContext(LoginContext);
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && !loginCtx.isLoggedIn) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [isOpen]);
+  }, [isOpen, loginCtx]);
 
   if (!isOpen) return null;
   return createPortal(
