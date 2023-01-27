@@ -3,9 +3,21 @@ import mainClasses from "../../UI/Common/common.module.css";
 import Faculty from "./Faculty/Faculty";
 import NewFaculty from "./New/NewFaculty";
 import useBooleanState from "../../../Hooks/use-BooleanState";
+import { useEffect } from "react";
 
 const Faculties = () => {
   const newFaculty = useBooleanState();
+  const getFaculties = async () => {
+    const response = await fetch(
+      "https://api.kodoomostad.rezakargar.ir/api/v1/Faculties"
+    );
+    const data = await response.json();
+    return data;
+  };
+  useEffect(() => {
+    const faculties = getFaculties();
+    console.log(faculties);
+  }, []);
   return (
     <section>
       <div className={classes["faculties-title"]}>
