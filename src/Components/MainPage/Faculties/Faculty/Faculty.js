@@ -4,7 +4,7 @@ import useBooleanState from "../../../../Hooks/use-BooleanState";
 import NewTeacher from "../New/NewTeacher";
 import AllTeachers from "./Teachers/AllTeachers/AllTeachers";
 
-const Faculty = () => {
+const Faculty = ({ faculty }) => {
   const allTeachersModal = useBooleanState();
   const newTeacherModal = useBooleanState();
 
@@ -16,17 +16,16 @@ const Faculty = () => {
   return (
     <div className={classes.faculty}>
       <p className={classes["faculty-title"]}>دانشکده</p>
-      <h4 className={classes["faculty-name"]}> فناوری اطلاعات</h4>
+      <h4 className={classes["faculty-name"]}>{faculty.name}</h4>
       <ul className={classes.teachers}>
-        <li className={classes.teacher + " " + mainClasses["hand-cursor"]}>
-          مهدی هاشم زاده
-        </li>
-        <li className={classes.teacher + " " + mainClasses["hand-cursor"]}>
-          مهدی هاشم زاده
-        </li>
-        <li className={classes.teacher + " " + mainClasses["hand-cursor"]}>
-          مهدی هاشم زاده
-        </li>
+        {faculty.professors.slice(0, 4).map((proffesor) => (
+          <li
+            className={classes.teacher + " " + mainClasses["hand-cursor"]}
+            key={proffesor.id}
+          >
+            {proffesor.name}
+          </li>
+        ))}
       </ul>
       <p
         className={classes["all-teachers"] + " " + mainClasses["hand-cursor"]}

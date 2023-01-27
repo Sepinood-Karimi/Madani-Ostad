@@ -3,20 +3,20 @@ import mainClasses from "../../UI/Common/common.module.css";
 import Faculty from "./Faculty/Faculty";
 import NewFaculty from "./New/NewFaculty";
 import useBooleanState from "../../../Hooks/use-BooleanState";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Faculties = () => {
   const newFaculty = useBooleanState();
+  const [faculties, setFaculties] = useState([]);
   const getFaculties = async () => {
     const response = await fetch(
       "https://api.kodoomostad.rezakargar.ir/api/v1/Faculties"
     );
     const data = await response.json();
-    return data;
+    return data.data;
   };
   useEffect(() => {
-    const faculties = getFaculties();
-    console.log(faculties);
+    getFaculties().then((faculties) => setFaculties(faculties));
   }, []);
   return (
     <section id="faculties">
@@ -44,13 +44,9 @@ const Faculties = () => {
         </div>
       </div>
       <div className={classes.faculties}>
-        <Faculty />
-        <Faculty />
-        <Faculty />
-        <Faculty />
-        <Faculty />
-        <Faculty />
-        <Faculty />
+        {faculties.map((faculty) => (
+          <Faculty faculty={faculty} key={faculty.id} />
+        ))}
       </div>
       <NewFaculty {...newFaculty} />
     </section>
