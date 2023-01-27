@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const LoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(false);
   const login = (accessToken) => {
     setIsLoggedIn(true);
   };
@@ -13,10 +14,11 @@ const LoginProvider = ({ children }) => {
 
   const loginState = {
     login,
-    loading: false,
+    loading,
     error: {},
     isLoggedIn,
     logout,
+    setLoading,
   };
 
   return (

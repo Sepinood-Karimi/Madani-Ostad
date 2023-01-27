@@ -6,6 +6,7 @@ const defaultLoginState = {
   error: {},
   isLoggedIn: false,
   logout: () => {},
+  setLoading: () => {},
 };
 const LoginContext = React.createContext(defaultLoginState);
 export default LoginContext;

@@ -1,6 +1,9 @@
 import classes from "./LongButton.module.css";
 import mainClasses from "../../Common/common.module.css";
 import classnames from "classnames";
+import LoadingSvg from "../../../../SVG/LoadingSvg";
+import { useContext } from "react";
+import LoginContext from "../../../../store/login-context";
 
 const LongButton = ({
   children,
@@ -12,6 +15,8 @@ const LongButton = ({
     onClickButton();
   };
 
+  const loginCtx = useContext(LoginContext);
+
   return (
     <button
       className={classnames(
@@ -22,6 +27,11 @@ const LongButton = ({
       )}
       onClick={onButtonClick}
     >
+      {loginCtx.loading && (
+        <div className={classnames(classes["button-svg"])}>
+          <LoadingSvg width={30} />
+        </div>
+      )}
       {children}
     </button>
   );

@@ -16,6 +16,7 @@ const Form = ({
         <LongButton
           additionalClassNames={additionalClassNames}
           onClickButton={buttonActions}
+          isLoading={true}
         >
           {buttonText}
         </LongButton>

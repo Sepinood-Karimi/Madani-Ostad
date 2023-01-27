@@ -13,7 +13,7 @@ const Login = ({ isOpen, close, openSignUpModal }) => {
   const loginCtx = useContext(LoginContext);
 
   const login = async () => {
-    loginCtx.loading = true;
+    loginCtx.setLoading(true);
     try {
       const response = await fetch(
         "https://api.kodoomostad.rezakargar.ir/api/v1/users/authenticate",
@@ -31,15 +31,15 @@ const Login = ({ isOpen, close, openSignUpModal }) => {
       );
       const data = await response.json();
       if (response.ok) {
-        loginCtx.loading = false;
+        loginCtx.setLoading(false);
         loginCtx.login(data.access_token);
       } else {
-        loginCtx.loading = false;
+        loginCtx.setLoading(false);
         loginCtx.error = data.errors;
         console.log(loginCtx.error[0]);
       }
     } catch (e) {}
-    loginCtx.loading = false;
+    loginCtx.setLoading(false);
   };
   return (
     <Modal
