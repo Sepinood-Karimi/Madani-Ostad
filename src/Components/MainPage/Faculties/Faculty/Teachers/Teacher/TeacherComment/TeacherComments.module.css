@@ -1,0 +1,29 @@
+.comments{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #8592a5;
+    margin: 50px 150px 100px 150px;
+    padding: 10px;
+}
+
+.comments-titles{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    font-size: 16px;
+}
+.comments-title{
+    color: #4a5568;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.comments-count{
+    color: #4a5568;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.comments-count__title{
+    color: #4a5568;
+}

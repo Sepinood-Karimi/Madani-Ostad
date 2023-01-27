@@ -1,0 +1,29 @@
+.comment{
+    margin-right: 30px;
+    border-right: 3px solid #4299e1;
+    padding: 0 5px ;
+}
+
+.comment-title{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.author{
+    color: #4a5568;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.answer{
+    color: #4299e1;
+    font-size: 14px;
+}
+
+.comment-text{
+    color: #8592a5;
+    font-size: 14px;
+    direction: rtl;
+    line-height: 30px;
+}
