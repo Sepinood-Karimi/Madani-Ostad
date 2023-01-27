@@ -2,7 +2,6 @@ import PreviousComments from "./PreviousComments/PreviousComments";
 import CommentForm from "./CommentForm/CommentForm";
 import classnames from "classnames";
 import classes from "./TeacherComments.module.css";
-
 const TeacherComment = () => {
   return (
     <div className={classnames(classes.comments)}>
