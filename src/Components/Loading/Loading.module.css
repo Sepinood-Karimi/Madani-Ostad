@@ -1,0 +1,18 @@
+.loading-background{
+    background-color: rgba(247, 250, 252,0.5);
+}
+
+.loading {
+    background-color: rgba(247, 250, 252,0.5);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.loading-title{
+    font-weight: bold;
+    color: #4a5568;
+}
+
+.loading-text{
+    color: #4a5568;
+}

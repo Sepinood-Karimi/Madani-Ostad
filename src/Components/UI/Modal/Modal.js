@@ -4,7 +4,13 @@ import { createPortal } from "react-dom";
 import { useContext, useEffect } from "react";
 import LoginContext from "../../../store/login-context";
 
-const Modal = ({ isOpen, children, additionalModalClasses, closeModal }) => {
+const Modal = ({
+  isOpen,
+  children,
+  additionalModalClasses,
+  closeModal,
+  additionalOverlayClasses,
+}) => {
   const loginCtx = useContext(LoginContext);
   useEffect(() => {
     if (isOpen && !loginCtx.isLoggedIn) {
@@ -16,7 +22,10 @@ const Modal = ({ isOpen, children, additionalModalClasses, closeModal }) => {
 
   if (!isOpen) return null;
   return createPortal(
-    <div className={classnames(classes.overlay)} onClick={closeModal}>
+    <div
+      className={classnames(classes.overlay, additionalOverlayClasses)}
+      onClick={closeModal}
+    >
       <div
         className={classnames(classes.modal, additionalModalClasses)}
         onClick={(e) => e.stopPropagation()}

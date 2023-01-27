@@ -1,11 +1,6 @@
-import Modal from "../Components/UI/Modal/Modal";
+import Loading from "../Components/Loading/Loading";
 
 const LoadingPage = ({ isOpen, close }) => {
-  return (
-    <Modal isOpen={isOpen} closeModal={close}>
-      <p>لطفا صبر کنید</p>
-      <p>در حال انتقال به صفحه ای دیگر</p>
-    </Modal>
-  );
+  return <Loading close={close} isOpen={isOpen} />;
 };
 export default LoadingPage;
