@@ -19,7 +19,7 @@ const Faculties = () => {
     console.log(faculties);
   }, []);
   return (
-    <section>
+    <section id="faculties">
       <div className={classes["faculties-title"]}>
         <div className={classes["faculties-icon"]}>
           <i className="fa fa-university" aria-hidden="true"></i>

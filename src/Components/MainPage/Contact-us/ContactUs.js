@@ -47,7 +47,7 @@ const ContactUs = () => {
   };
 
   return (
-    <section className={classes["contact-us"]}>
+    <section className={classes["contact-us"]} id="contact-us">
       <div className={classes["contact-us__subject"]}>
         <span className={classes["contact-us__icon"]}>
           <i className="fa fa-headphones fa-lg" aria-hidden="true"></i>

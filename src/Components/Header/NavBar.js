@@ -48,8 +48,13 @@ const NavBar = () => {
             <i className="fa fa-power-off" aria-hidden="true"></i>
           </RedButton>
         )}
-        <a className={mainClasses["hand-cursor"]}> دانشکده ها </a>
-        <a className={mainClasses["hand-cursor"]}> تماس با ما </a>
+        <a className={mainClasses["hand-cursor"]} href="/#faculties">
+          دانشکده ها
+        </a>
+        <a className={mainClasses["hand-cursor"]} href="/#contact-us">
+          {" "}
+          تماس با ما{" "}
+        </a>
         {!loginCtx.isLoggedIn && (
           <a
             className={mainClasses["hand-cursor"]}
