@@ -6,6 +6,7 @@ import Form from "../UI/Form/Form";
 import commonClasses from "../UI/Common/common.module.css";
 import { useContext, useRef } from "react";
 import LoginContext from "../../store/login-context";
+import Toastify from "toastify-js";
 
 const Login = ({ isOpen, close, openSignUpModal }) => {
   const emailInputRef = useRef();
@@ -33,6 +34,14 @@ const Login = ({ isOpen, close, openSignUpModal }) => {
       if (response.ok) {
         loginCtx.setLoading(false);
         loginCtx.login(data.access_token);
+        Toastify({
+          text: "شما با موفقیت وارد شدید",
+          duration: 3000,
+          gravity: "bottom",
+          style: {
+            background: "linear-gradient(to right,#68d391, #96c93d)",
+          },
+        }).showToast();
       } else {
         loginCtx.setLoading(false);
         loginCtx.error = data.errors;
