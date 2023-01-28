@@ -7,28 +7,28 @@ const TeacherInfo = () => {
   const params = useParams();
   const [teacher, setTeacher] = useState({});
   const [faculty, setFaculty] = useState("");
-  const getTeacher = async () => {
-    const response = await fetch(
-      `https://api.kodoomostad.rezakargar.ir/api/v1/Professors/${params.id}`
-    );
-    const data = await response.json();
-    return data.data;
-  };
 
   useEffect(() => {
-    getTeacher().then((teacher) => setTeacher(teacher));
-  }, [getTeacher]);
-  const getFaculty = async () => {
-    const response = await fetch(
-      `https://api.kodoomostad.rezakargar.ir/api/v1/Faculties/${teacher.facultyId}`
-    );
-    const data = await response.json();
-    return data.data;
-  };
+    const getTeacher = async () => {
+      const response = await fetch(
+        `https://api.kodoomostad.rezakargar.ir/api/v1/Professors/${params.id}`
+      );
+      const data = await response.json();
+      return data.data;
+    };
+    const getFaculty = async (facultyId) => {
+      const response = await fetch(
+        `https://api.kodoomostad.rezakargar.ir/api/v1/Faculties/${facultyId}`
+      );
+      const data = await response.json();
+      return data.data;
+    };
 
-  useEffect(() => {
-    getFaculty().then((faculty) => setFaculty(faculty));
-  }, [getFaculty]);
+    getTeacher().then((teacher) => {
+      setTeacher(teacher);
+      getFaculty(teacher.facultyId).then((faculty) => setFaculty(faculty));
+    });
+  }, []);
 
   return (
     <div className={classnames(classes["teacher-info"])}>
@@ -38,7 +38,7 @@ const TeacherInfo = () => {
       </div>
       <div className={classnames(classes.faculty)}>
         <p> : دانشکده</p>
-        {/*<h4>{faculty.name}</h4>*/}
+        <h4>{faculty.name}</h4>
       </div>
       <div className={classnames(classes.score)}>
         <p className={classnames(classes["score-title"])}>: امتیاز از 10</p>

@@ -4,8 +4,10 @@ import { useState } from "react";
 const LoginProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [token, setToken] = useState("");
   const login = (accessToken) => {
     setIsLoggedIn(true);
+    setToken(accessToken);
   };
 
   const logout = () => {
@@ -19,6 +21,7 @@ const LoginProvider = ({ children }) => {
     isLoggedIn,
     logout,
     setLoading,
+    token,
   };
 
   return (
