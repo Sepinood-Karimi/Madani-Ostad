@@ -7,6 +7,7 @@ import signUpClasses from "./SignUp.module.css";
 import commonClasses from "../UI/Common/common.module.css";
 import { useContext, useRef } from "react";
 import LoginContext from "../../store/login-context";
+import Toastify from "toastify-js";
 
 const SignUp = ({ isOpen, close, openLoginModal }) => {
   const emailInputRef = useRef();
@@ -17,7 +18,7 @@ const SignUp = ({ isOpen, close, openLoginModal }) => {
   const loginCtx = useContext(LoginContext);
 
   const signUp = async () => {
-    loginCtx.loading = true;
+    loginCtx.setLoading(true);
     try {
       const response = await fetch(
         "https://api.kodoomostad.rezakargar.ir/api/v1/users",
@@ -36,15 +37,31 @@ const SignUp = ({ isOpen, close, openLoginModal }) => {
       );
       const data = await response.json();
       if (response.ok) {
+        loginCtx.setLoading(false);
         loginCtx.login(data.id);
-        console.log(data.id);
+        Toastify({
+          text: "اکانت شما با موفقیت ساخته شد",
+          duration: 3000,
+          gravity: "bottom",
+          style: {
+            background: "linear-gradient(to right,#68d391, #96c93d)",
+          },
+        }).showToast();
       } else {
-        loginCtx.loading = false;
+        loginCtx.setLoading(false);
         loginCtx.error = data.errors;
-        console.log(loginCtx.error[0]);
+        throw new Error(loginCtx.error);
       }
-    } catch (e) {}
-    loginCtx.loading = false;
+    } catch (e) {
+      Toastify({
+        text: e.message,
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+          background: "linear-gradient(to right,#fc8181,#fc8181)",
+        },
+      }).showToast();
+    }
   };
   return (
     <>

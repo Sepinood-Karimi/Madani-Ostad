@@ -8,6 +8,7 @@ import useBooleanState from "../../Hooks/use-BooleanState";
 import { useContext } from "react";
 import LoginContext from "../../store/login-context";
 import RedButton from "../UI/Button/RedButton/RedButton";
+import Toastify from "toastify-js";
 
 const NavBar = () => {
   const loginCtx = useContext(LoginContext);
@@ -24,6 +25,16 @@ const NavBar = () => {
 
   const logout = () => {
     loginCtx.logout();
+    Toastify({
+      text: "شما خارج شدید",
+      duration: 3000,
+      gravity: "bottom",
+      style: {
+        background: "linear-gradient(to right,#68d391, #96c93d)",
+      },
+    }).showToast();
+    loginModal.close();
+    signUpModal.close();
   };
 
   return (

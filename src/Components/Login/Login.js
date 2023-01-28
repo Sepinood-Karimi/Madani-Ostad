@@ -45,10 +45,18 @@ const Login = ({ isOpen, close, openSignUpModal }) => {
       } else {
         loginCtx.setLoading(false);
         loginCtx.error = data.errors;
-        console.log(loginCtx.error[0]);
+        throw new Error(loginCtx.error);
       }
-    } catch (e) {}
-    loginCtx.setLoading(false);
+    } catch (e) {
+      Toastify({
+        text: e.message,
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+          background: "linear-gradient(to right,#fc8181,#fc8181)",
+        },
+      }).showToast();
+    }
   };
   return (
     <Modal
