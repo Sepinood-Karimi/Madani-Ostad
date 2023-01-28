@@ -34,7 +34,7 @@ const Main = () => {
         </p>
         <p>راحتی بتونن استاد مورد نظرشونو انتخاب کنن</p>
         <div className={classes.buttons}>
-          <Button className={classes["uni-button"]}>
+          <Button className={classes["uni-button"]} buttonAction={() => {}}>
             <a href="/#faculties">دانشکده ها</a>
             <i className="fa fa-university" aria-hidden="true"></i>
           </Button>
