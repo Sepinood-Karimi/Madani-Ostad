@@ -3,10 +3,12 @@ import mainClasses from "../../../UI/Common/common.module.css";
 import useBooleanState from "../../../../Hooks/use-BooleanState";
 import NewTeacher from "../New/NewTeacher";
 import AllTeachers from "./Teachers/AllTeachers/AllTeachers";
+import { useNavigate } from "react-router";
 
 const Faculty = ({ faculty }) => {
   const allTeachersModal = useBooleanState();
   const newTeacherModal = useBooleanState();
+  const navigate = useNavigate();
 
   const openNewTeacherModal = () => {
     allTeachersModal.close();
@@ -22,6 +24,9 @@ const Faculty = ({ faculty }) => {
           <li
             className={classes.teacher + " " + mainClasses["hand-cursor"]}
             key={proffesor.id}
+            onClick={() => {
+              navigate(`/professor/${proffesor.id}`);
+            }}
           >
             {proffesor.name}
           </li>
