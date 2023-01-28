@@ -35,7 +35,8 @@ const Main = () => {
         <p>راحتی بتونن استاد مورد نظرشونو انتخاب کنن</p>
         <div className={classes.buttons}>
           <Button className={classes["uni-button"]}>
-            دانشکده ها<i className="fa fa-university" aria-hidden="true"></i>
+            <a href="/#faculties">دانشکده ها</a>
+            <i className="fa fa-university" aria-hidden="true"></i>
           </Button>
           {!loginCtx.isLoggedIn && (
             <Button buttonAction={signUpModal.open}>
