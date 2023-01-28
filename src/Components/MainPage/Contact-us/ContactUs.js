@@ -4,6 +4,7 @@ import Input from "../../UI/Input/Input";
 import Form from "../../UI/Form/Form";
 import { useContext, useRef } from "react";
 import LoginContext from "../../../store/login-context";
+import Toastify from "toastify-js";
 
 const ContactUs = () => {
   const submitButtonText = (
@@ -17,12 +18,7 @@ const ContactUs = () => {
   const messageInputRef = useRef();
   const mobileInputRef = useRef();
   const contactUs = async () => {
-    loginCtx.loading = true;
-    console.log({
-      name: nameInputRef.current.value,
-      message: messageInputRef.current.value,
-      mobile: mobileInputRef.current.value,
-    });
+    loginCtx.setLoading(true);
     try {
       const response = await fetch("https://mo.akdev.ir/api/contact", {
         method: "POST",
@@ -37,13 +33,29 @@ const ContactUs = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log(data);
+        loginCtx.setLoading(false);
+        Toastify({
+          text: "پیام شما با موفقیت ثبت شد",
+          duration: 3000,
+          gravity: "bottom",
+          style: {
+            background: "linear-gradient(to right,#68d391, #96c93d)",
+          },
+        }).showToast();
       } else {
-        loginCtx.loading = false;
-        console.log(data);
+        loginCtx.setLoading(false);
+        throw new Error(data.error);
       }
-    } catch (e) {}
-    loginCtx.loading = false;
+    } catch (e) {
+      Toastify({
+        text: e.message,
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+          background: "linear-gradient(to right,#fc8181, #fc8181)",
+        },
+      }).showToast();
+    }
   };
 
   return (
