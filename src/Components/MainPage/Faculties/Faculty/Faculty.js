@@ -36,6 +36,7 @@ const Faculty = ({ faculty }) => {
       <AllTeachers
         {...allTeachersModal}
         openNewTeacherModal={openNewTeacherModal}
+        faculty={faculty}
       />
       <NewTeacher {...newTeacherModal} />
     </div>
