@@ -2,8 +2,10 @@ import mainClasses from "../../../../../UI/Common/common.module.css";
 import Modal from "../../../../../UI/Modal/Modal";
 import classes from "./AllTeachers.module.css";
 import classnames from "classnames";
+import { useNavigate } from "react-router";
 
 const AllTeachers = ({ isOpen, close, openNewTeacherModal, faculty }) => {
+  const navigate = useNavigate();
   return (
     <Modal
       additionalModalClasses={classnames(classes["all-teachers__modal"])}
@@ -18,6 +20,9 @@ const AllTeachers = ({ isOpen, close, openNewTeacherModal, faculty }) => {
             <li
               className={classes.teacher + " " + mainClasses["hand-cursor"]}
               key={proffesor.id}
+              onClick={() => {
+                navigate(`/professor/${proffesor.id}`);
+              }}
             >
               {proffesor.name}
             </li>
