@@ -23,7 +23,9 @@ const TeacherComment = () => {
     <div className={classnames(classes.comments)}>
       <div className={classnames(classes["comments-titles"])}>
         <p className={classnames(classes["comments-title"])}>| نظرات کاربران</p>
-        <p className={classnames(classes["comments-count"])}> 0 </p>
+        <p className={classnames(classes["comments-count"])}>
+          {teacherComments.length}
+        </p>
         <p>نظر</p>
       </div>
       {teacherComments.map((comment) => (
