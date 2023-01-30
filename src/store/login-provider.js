@@ -1,17 +1,25 @@
 import LoginContext from "./login-context";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const LoginProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState("");
+
+  const isLoggedIn = !!token;
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem("token");
+    setToken(storedToken);
+  }, []);
+
   const login = (accessToken) => {
-    setIsLoggedIn(true);
+    localStorage.setItem("token", token);
     setToken(accessToken);
   };
 
   const logout = () => {
-    setIsLoggedIn(false);
+    setToken("");
+    localStorage.setItem("token", "");
   };
 
   const loginState = {

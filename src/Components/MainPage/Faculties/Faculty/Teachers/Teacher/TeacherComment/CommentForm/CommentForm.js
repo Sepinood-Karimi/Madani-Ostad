@@ -51,6 +51,7 @@ const CommentForm = () => {
             background: "linear-gradient(to right,#68d391, #96c93d)",
           },
         }).showToast();
+        window.location.reload();
       } else {
         throw new Error(data.errors[0]);
       }
