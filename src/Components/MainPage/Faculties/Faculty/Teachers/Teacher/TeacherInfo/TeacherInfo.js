@@ -28,7 +28,7 @@ const TeacherInfo = () => {
       setTeacher(teacher);
       getFaculty(teacher.facultyId).then((faculty) => setFaculty(faculty));
     });
-  }, [params]);
+  }, [params.id]);
 
   return (
     <div className={classnames(classes["teacher-info"])}>

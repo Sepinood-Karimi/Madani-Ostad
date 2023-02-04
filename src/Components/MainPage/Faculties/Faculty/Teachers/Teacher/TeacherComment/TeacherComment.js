@@ -17,7 +17,7 @@ const TeacherComment = () => {
     };
 
     getTeacherComments().then((comments) => setTeacherComments(comments));
-  }, [params]);
+  }, [params.id]);
 
   return (
     <div className={classnames(classes.comments)}>
