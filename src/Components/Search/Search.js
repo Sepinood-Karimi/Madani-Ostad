@@ -2,10 +2,13 @@ import classes from "./Search.module.css";
 import { useRef, useState } from "react";
 import classnames from "classnames";
 import commonClasses from "../UI/Common/common.module.css";
+import { useNavigate } from "react-router";
 
 const Search = ({ placeholder }) => {
   const [teachersList, setTeachersList] = useState([]);
   const teacherInputRef = useRef();
+  const navigate = useNavigate();
+
   const getTeachers = async () => {
     const response = await fetch(
       "https://api.kodoomostad.rezakargar.ir/api/v1/Professors"
@@ -20,7 +23,8 @@ const Search = ({ placeholder }) => {
 
   const onSearch = (e) => {
     e.preventDefault();
-    console.log("hey");
+    const professors = teachersList.filter(teacher=>teacher.name===teacherInputRef.current.value);
+    navigate(`/professor/${professors[0].id}`);
   };
 
   return (
