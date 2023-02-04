@@ -15,12 +15,12 @@
 
 .faculty-title {
     margin-bottom: 0;
-    margin-right: 70px;
+    margin-right: 100px;
     color: #4a5568;
 }
 
 .faculty-name {
-    margin-right: 120px;
+    text-align: center;
     margin-top: 0;
     margin-bottom: 50px;
     color: #4a5568;
@@ -34,6 +34,7 @@
 }
 
 .all-teachers {
-    margin: 30px 105px 0 0;
+    margin: 30px 0 0 0;
+    text-align: center;
     color: #68d391;
 }

@@ -13,8 +13,8 @@ const LoginProvider = ({ children }) => {
   }, []);
 
   const login = (accessToken) => {
-    localStorage.setItem("token", token);
     setToken(accessToken);
+    localStorage.setItem("token", accessToken);
   };
 
   const logout = () => {

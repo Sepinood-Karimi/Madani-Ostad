@@ -41,6 +41,7 @@ const CommentForm = () => {
           },
         }
       );
+      console.log(loginCtx);
       const data = await response.json();
       if (response.ok) {
         Toastify({
