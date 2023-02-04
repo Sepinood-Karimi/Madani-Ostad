@@ -43,7 +43,7 @@ const Faculty = ({ faculty }) => {
         openNewTeacherModal={openNewTeacherModal}
         faculty={faculty}
       />
-      <NewTeacher {...newTeacherModal} />
+      <NewTeacher {...newTeacherModal} faculty={faculty} />
     </div>
   );
 };
