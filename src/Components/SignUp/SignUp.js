@@ -16,7 +16,53 @@ const SignUp = ({ isOpen, close, openLoginModal }) => {
   const studentIdInputRef = useRef();
 
   const loginCtx = useContext(LoginContext);
-
+  const login = async () => {
+    loginCtx.setLoading(true);
+    try {
+      const response = await fetch(
+        "https://api.kodoomostad.rezakargar.ir/api/v1/users/authenticate",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            grant_Type: "Password",
+            username: emailInputRef.current.value,
+            password: passwordInputRef.current.value,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const data = await response.json();
+      if (response.ok) {
+        loginCtx.setLoading(false);
+        loginCtx.login(data.access_token);
+        Toastify({
+          text: "شما با موفقیت وارد شدید",
+          duration: 3000,
+          gravity: "bottom",
+          style: {
+            background: "linear-gradient(to right,#68d391, #96c93d)",
+          },
+        }).showToast();
+      } else {
+        loginCtx.setLoading(false);
+        loginCtx.error = data.errors;
+        throw new Error(loginCtx.error);
+      }
+    } catch (e) {
+      Toastify({
+        text: e.message,
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+          background: "linear-gradient(to right,#fc8181,#fc8181)",
+        },
+      }).showToast();
+    }
+    loginCtx.setLoading(false);
+    close();
+  };
   const signUp = async () => {
     loginCtx.setLoading(true);
     try {
@@ -38,7 +84,7 @@ const SignUp = ({ isOpen, close, openLoginModal }) => {
       const data = await response.json();
       if (response.ok) {
         loginCtx.setLoading(false);
-        loginCtx.login(data.id);
+        login().then();
         Toastify({
           text: "اکانت شما با موفقیت ساخته شد",
           duration: 3000,

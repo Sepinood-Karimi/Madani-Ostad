@@ -57,6 +57,8 @@ const Login = ({ isOpen, close, openSignUpModal }) => {
         },
       }).showToast();
     }
+    loginCtx.setLoading(false);
+    close();
   };
   return (
     <Modal
