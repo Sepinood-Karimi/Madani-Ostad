@@ -1,6 +1,9 @@
 .search-button {
+    position: absolute;
+    margin: auto;
+    top: 16px;
+    margin-left: 2px;
     padding: 4px 12px;
-    margin-right: -13.5%;
 }
 
 .search-input {
@@ -13,6 +16,7 @@
     border: 1px solid #8592a5;
     background-color: transparent;
     direction: rtl;
+    width: 100%;
 }
 
 .search-input:focus {
