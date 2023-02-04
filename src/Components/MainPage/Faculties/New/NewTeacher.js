@@ -63,7 +63,7 @@ const NewTeacher = ({ isOpen, close, faculty }) => {
           لطفا استاد مورد نظر خود را از طریق فرم زیر معرفی کنین تا به دانشکده
         </p>
         <p className={classnames(classes["new-description-two"])}>
-          فناوری اطلاعات اضافه شود
+          {`${faculty.name} اضافه شود`}
         </p>
         <Form
           buttonText="ارسال پیشنهاد"
