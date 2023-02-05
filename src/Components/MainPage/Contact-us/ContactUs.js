@@ -56,6 +56,9 @@ const ContactUs = () => {
         },
       }).showToast();
     }
+    messageInputRef.current.value = "";
+    nameInputRef.current.value = "";
+    mobileInputRef.current.value = "";
   };
 
   return (

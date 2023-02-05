@@ -23,8 +23,11 @@ const Search = ({ placeholder }) => {
 
   const onSearch = (e) => {
     e.preventDefault();
-    const professors = teachersList.filter(teacher=>teacher.name===teacherInputRef.current.value);
+    const professors = teachersList.filter(
+      (teacher) => teacher.name === teacherInputRef.current.value
+    );
     navigate(`/professor/${professors[0].id}`);
+    teacherInputRef.current.value = "";
   };
 
   return (

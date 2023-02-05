@@ -66,6 +66,7 @@ const CommentForm = () => {
         },
       }).showToast();
     }
+    commentRef.current.value = "";
   };
 
   return (
