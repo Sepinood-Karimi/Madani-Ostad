@@ -2,11 +2,10 @@ import Modal from "../UI/Modal/Modal";
 import classnames from "classnames";
 import classes from "./Loading.module.css";
 
-const Loading = ({ isOpen, close }) => {
+const Loading = () => {
   return (
     <Modal
-      isOpen={isOpen}
-      closeModal={close}
+      isOpen={true}
       additionalModalClasses={classnames(classes.loading)}
       additionalOverlayClasses={classnames(classes["loading-background"])}
     >
