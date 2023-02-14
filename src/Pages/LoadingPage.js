@@ -1,6 +1,12 @@
-import Loading from "../Components/Loading/Loading";
+import Additional from "../Components/UI/Additional/Additional";
 
 const LoadingPage = () => {
-  return <Loading isOpen={true} />;
+  return (
+    <Additional
+      isOpen={true}
+      text="... در حال انتقال به صفحه ای دیگر"
+      title="لطفا صبر کنید"
+    />
+  );
 };
 export default LoadingPage;
