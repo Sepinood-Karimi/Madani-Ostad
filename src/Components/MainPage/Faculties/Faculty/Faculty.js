@@ -28,6 +28,7 @@ const Faculty = ({ faculty }) => {
               navigate(`/professor/${proffesor.id}`);
             }}
           >
+            <span />
             {proffesor.name}
           </li>
         ))}

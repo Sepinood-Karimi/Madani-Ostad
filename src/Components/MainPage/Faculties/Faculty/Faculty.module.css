@@ -8,9 +8,11 @@
 }
 
 .teachers {
+    width: 100%;
     direction: rtl;
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
 }
 
 .faculty-title {
@@ -28,9 +30,20 @@
 }
 
 .teacher {
-    width: 50%;
+    width: max-content;
+    min-width: 50%;
     margin-bottom: 10px;
     color: #4a5568;
+    display: flex;
+    align-items: baseline;
+}
+.teacher > span{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: black;
+    display: block;
+    margin-left: 4px;
 }
 
 .all-teachers {
