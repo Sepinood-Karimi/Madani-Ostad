@@ -9,7 +9,7 @@ import { useContext } from "react";
 import LoginContext from "../../store/login-context";
 import RedButton from "../UI/Button/RedButton/RedButton";
 import Toastify from "toastify-js";
-
+import classnames from "classnames";
 const NavBar = () => {
   const loginCtx = useContext(LoginContext);
   const loginModal = useBooleanState();
@@ -75,6 +75,56 @@ const NavBar = () => {
           </a>
         )}
       </nav>
+      <div className={classnames(classes["hamburger-menu"])}>
+        <input
+          id="menu__toggle"
+          className={classnames(classes["menu__toggle"])}
+          type="checkbox"
+        />
+        <label
+          className={classnames(classes["menu__btn"])}
+          htmlFor="menu__toggle"
+        >
+          <span></span>
+        </label>
+
+        <ul className={classnames(classes["menu__box"])}>
+          <li>
+            <a className={mainClasses["hand-cursor"]} href="/#faculties">
+              دانشکده ها
+            </a>
+          </li>
+          <li>
+            <a className={mainClasses["hand-cursor"]} href="/#contact-us">
+              {" "}
+              تماس با ما{" "}
+            </a>
+          </li>
+          <li>
+            {!loginCtx.isLoggedIn && (
+              <a
+                className={mainClasses["hand-cursor"]}
+                onClick={() => signUpModal.open()}
+              >
+                ثبت نام
+              </a>
+            )}
+          </li>
+          <li>
+            {!loginCtx.isLoggedIn && (
+              <Button buttonAction={loginModal.open}>
+                ورود <i className="fa fa-user" aria-hidden="true"></i>
+              </Button>
+            )}
+            {loginCtx.isLoggedIn && (
+              <RedButton buttonAction={logout}>
+                خروج
+                <i className="fa fa-power-off" aria-hidden="true"></i>
+              </RedButton>
+            )}
+          </li>
+        </ul>
+      </div>
       {!loginCtx.isLoggedIn && (
         <>
           <Login {...loginModal} openSignUpModal={openSignUpModal} />

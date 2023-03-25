@@ -26,6 +26,33 @@
     width: 100%;
 }
 
+@media (max-width: 1063px){
+    .search-input{
+        width: 80%;
+    }
+}@media (max-width: 840px){
+    .search-input{
+        width: 60%;
+    }
+    .search-input::placeholder{
+        font-size: 12px;
+    }
+}
+@media (max-width: 749px) {
+    .search-button{
+        top: 6px;
+        font-size: 14px;
+    }
+}
+@media(max-width: 400px){
+    .search-input{
+        width: 53%;
+        margin-top: 5px;
+    }
+    .search-button{
+        top: 8px;
+    }
+}
 .search-input:focus {
     outline: none;
 }
