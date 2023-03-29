@@ -1,7 +1,11 @@
+.search-form{
+    overflow: hidden;
+    border-radius: 25px;
+    border: 1px solid #8592a5;
+    width: 250px;
+}
+
 .search-button {
-    position: absolute;
-    top: 16px;
-    margin-left: 2px;
     padding: 4px 12px;
     color: white;
     background: #68d391;
@@ -18,41 +22,13 @@
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     font-size: 15px;
-    padding: 5px 10px 5px 80px;
-    border-radius: 25px;
-    border: 1px solid #8592a5;
+    padding: 5px 10px 5px 10px;
+    border: 0;
     background-color: transparent;
     direction: rtl;
-    width: 100%;
+    width: calc(100% - 38px);
 }
 
-@media (max-width: 1063px){
-    .search-input{
-        width: 80%;
-    }
-}@media (max-width: 840px){
-    .search-input{
-        width: 60%;
-    }
-    .search-input::placeholder{
-        font-size: 12px;
-    }
-}
-@media (max-width: 749px) {
-    .search-button{
-        top: 6px;
-        font-size: 14px;
-    }
-}
-@media(max-width: 400px){
-    .search-input{
-        width: 53%;
-        margin-top: 5px;
-    }
-    .search-button{
-        top: 8px;
-    }
-}
 .search-input:focus {
     outline: none;
 }

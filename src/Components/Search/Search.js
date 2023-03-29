@@ -31,7 +31,7 @@ const Search = ({ placeholder }) => {
   };
 
   return (
-    <form onSubmit={onSearch}>
+    <form className={classes["search-form"]} onSubmit={onSearch}>
       <button
         className={classnames(
           classes["search-button"],
