@@ -4,9 +4,9 @@ import classes from "./NavBar.module.css";
 import mainClasses from "../UI/Common/common.module.css";
 import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
-import useBooleanState from "../../Hooks/use-BooleanState";
-import { useContext } from "react";
-import LoginContext from "../../store/login-context";
+import useBooleanState from "Hooks/use-BooleanState";
+import { useContext, useEffect, useRef } from "react";
+import LoginContext from "store/login-context";
 import RedButton from "../UI/Button/RedButton/RedButton";
 import Toastify from "toastify-js";
 import classnames from "classnames";
@@ -36,6 +36,19 @@ const NavBar = () => {
     loginModal.close();
     signUpModal.close();
   };
+
+  const menuCheckBox = useRef();
+  useEffect(() => {
+    const onWindowResize = () => {
+      if (window.innerWidth > 748 && menuCheckBox.current) {
+        menuCheckBox.current.checked = false;
+      }
+    };
+    window.addEventListener("resize", onWindowResize);
+    return () => {
+      window.removeEventListener("resize", onWindowResize);
+    };
+  }, []);
 
   return (
     <header className={classes.header}>
@@ -80,6 +93,7 @@ const NavBar = () => {
           id="menu__toggle"
           className={classnames(classes["menu__toggle"])}
           type="checkbox"
+          ref={menuCheckBox}
         />
         <label
           className={classnames(classes["menu__btn"])}
