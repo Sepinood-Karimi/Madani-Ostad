@@ -13,9 +13,6 @@ a{
     width: 100%;
     box-shadow: 1px 1px 10px #8592a5;
 }
-
-
-
 .navbar {
     margin-top: 10px;
 }
@@ -39,47 +36,13 @@ a{
     margin-bottom: 10px;
     color: #8592a5;
 }
-@media (min-width: 1063px) {
-    .main-title p {
-        margin-right: 75px;
-    }
-}
 .navbar a {
     margin: 5px 10px;
     color: #4a5568;
 }
 
 /*navbar responsive hamburger menu*/
-@media (min-width: 748px){
-    .hamburger-menu{
-        display: none;
-    }
-}
 
-@media (max-width: 748px) {
-    .header{
-        justify-content: space-between;
-    }
-    .navbar{
-        display: none;
-    }
-}
-@media(max-width: 400px){
-    .logo{
-        font-size: 16px;
-    }
-    .main-title h2{
-        font-size: 16px;
-    }
-    .main-title p{
-        font-size: 16px;
-    }
-}
-@media(max-width: 323px){
-    .main-title p {
-        font-size: 14px;
-    }
-}
 .menu__toggle {
     opacity: 0;
     margin-left: 0;
@@ -126,7 +89,9 @@ a{
     top: 8px;
 }
 .menu__box {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     position: fixed;
     top: 0;
     left: -100%;
@@ -140,16 +105,62 @@ a{
     transition-duration: .25s;
     backdrop-filter: blur(5px);
 }
-/*.menu__item {*/
-/*    display: block;*/
-/*    padding: 12px 24px;*/
-/*    color: #333;*/
-/*    font-family: 'Roboto', sans-serif;*/
-/*    font-size: 20px;*/
-/*    font-weight: 600;*/
-/*    text-decoration: none;*/
-/*    transition-duration: .25s;*/
-/*}*/
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #4a5568;
+    font-size: 15px;
+    text-decoration: none;
+    transition-duration: .25s;
+}
 /*.menu__item:hover {*/
 /*    background-color: #CFD8DC;*/
 /*}*/
+
+.menu__item-button{
+   padding: 0;
+}
+
+@media (min-width: 1063px) {
+    .main-title p {
+        margin-right: 75px;
+    }
+}
+
+@media (min-width: 748px){
+    .hamburger-menu{
+        display: none;
+    }
+}
+
+@media (max-width: 748px) {
+    .header{
+        justify-content: space-between;
+    }
+    .navbar{
+        display: none;
+    }
+}
+@media(max-width: 400px){
+    .logo{
+        font-size: 16px;
+    }
+    .main-title h2{
+        font-size: 16px;
+    }
+    .main-title p{
+        font-size: 16px;
+    }
+}
+@media(max-width: 323px){
+    .main-title p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 353px) {
+    .header{
+        flex-direction: column;
+        justify-content: center;
+    }
+}

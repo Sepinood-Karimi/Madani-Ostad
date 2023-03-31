@@ -10,6 +10,7 @@ import LoginContext from "store/login-context";
 import RedButton from "../UI/Button/RedButton/RedButton";
 import Toastify from "toastify-js";
 import classnames from "classnames";
+
 const NavBar = () => {
   const loginCtx = useContext(LoginContext);
   const loginModal = useBooleanState();
@@ -103,18 +104,18 @@ const NavBar = () => {
         </label>
 
         <ul className={classnames(classes["menu__box"])}>
-          <li>
+          <li className={classnames(classes["menu__item"])}>
             <a className={mainClasses["hand-cursor"]} href="/#faculties">
               دانشکده ها
             </a>
           </li>
-          <li>
+          <li className={classnames(classes["menu__item"])}>
             <a className={mainClasses["hand-cursor"]} href="/#contact-us">
               {" "}
               تماس با ما{" "}
             </a>
           </li>
-          <li>
+          <li className={classnames(classes["menu__item"])}>
             {!loginCtx.isLoggedIn && (
               <a
                 className={mainClasses["hand-cursor"]}
@@ -124,9 +125,12 @@ const NavBar = () => {
               </a>
             )}
           </li>
-          <li>
+          <li className={classnames(classes["menu__item"])}>
             {!loginCtx.isLoggedIn && (
-              <Button buttonAction={loginModal.open}>
+              <Button
+                buttonAction={loginModal.open}
+                additionalClassNames={classes["menu__item-button"]}
+              >
                 ورود <i className="fa fa-user" aria-hidden="true"></i>
               </Button>
             )}
