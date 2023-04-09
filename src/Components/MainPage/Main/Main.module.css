@@ -8,7 +8,8 @@
 
 .main p {
     color: #4a5568;
-    margin: 8px;
+    margin: 8px 0;
+    line-height: 190%;
 }
 
 .main-container {
@@ -22,10 +23,6 @@
     margin-right: 10px;
 }
 
-.aside {
-    margin-top: 100px;
-}
-
 .buttons {
     margin-top: 30px;
 }
@@ -34,3 +31,63 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
+@media(max-width: 766px){
+    .main h1{
+        font-size: 24px;
+    }
+    .main p {
+        font-size: 14px;
+    }
+    .uni-button , .login-button{
+        font-size: 12px;
+    }
+    .buttons{
+        margin-top: 20px;
+    }
+}
+@media(max-width: 657px){
+    .main h1{
+        font-size: 22px;
+    }
+    .main p {
+        font-size: 12px;
+    }
+    .uni-button , .login-button{
+        font-size: 10px;
+    }
+    .buttons{
+        margin-top: 10px;
+    }
+}
+@media(max-width: 609px){
+    .main h1{
+        font-size: 20px;
+    }
+    .main p {
+        font-size: 10px;
+    }
+    .uni-button , .login-button{
+        font-size: 8px;
+    }
+    .buttons{
+        margin-top: 20px;
+    }
+
+}
+@media(max-width: 397px){
+    .main h1{
+        font-size: 18px;
+    }
+    .main p {
+        font-size: 8px;
+    }
+    .uni-button , .login-button{
+        font-size: 6px;
+    }
+    .buttons{
+        margin-top: 20px;
+    }
+
+}
+

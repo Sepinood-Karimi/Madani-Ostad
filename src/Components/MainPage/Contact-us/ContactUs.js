@@ -98,8 +98,6 @@ const ContactUs = () => {
               id="comment"
               name="comment"
               placeholder="هرچه می خواهد دل تنگت بگو"
-              rows="7"
-              cols="92"
               className={classes["contact-us__comment"]}
               ref={messageInputRef}
             ></textarea>

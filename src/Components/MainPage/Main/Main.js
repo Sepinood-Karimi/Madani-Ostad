@@ -1,11 +1,12 @@
 import Button from "../../UI/Button/Button/Button";
 import classes from "./Main.module.css";
-import MainPageSVG from "../../../SVG/MainPageSVG";
+import MainPageSVG from "../../../SVG/MainPageSVG/MainPageSVG";
 import useBooleanState from "../../../Hooks/use-BooleanState";
 import SignUp from "../../SignUp/SignUp";
 import Login from "../../Login/Login";
 import { useContext } from "react";
 import LoginContext from "../../../store/login-context";
+import classnames from "classnames";
 
 const Main = () => {
   const loginCtx = useContext(LoginContext);
@@ -39,15 +40,16 @@ const Main = () => {
             <i className="fa fa-university" aria-hidden="true"></i>
           </Button>
           {!loginCtx.isLoggedIn && (
-            <Button buttonAction={signUpModal.open}>
+            <Button
+              buttonAction={signUpModal.open}
+              className={classnames(classes["login-button"])}
+            >
               ثبت نام کنید <i className="fa fa-user" aria-hidden="true"></i>
             </Button>
           )}
         </div>
       </main>
-      <aside className={classes.aside}>
-        <MainPageSVG />
-      </aside>
+      <MainPageSVG />
       {!loginCtx.isLoggedIn && (
         <>
           <Login {...loginModal} openSignUpModal={openSignUpModal} />
