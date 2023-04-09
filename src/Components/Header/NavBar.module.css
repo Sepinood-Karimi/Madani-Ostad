@@ -141,6 +141,19 @@ a{
         display: none;
     }
 }
+
+@media(max-width: 618px){
+    .logo{
+        font-size: 16px
+    }
+    .main-title h2{
+        font-size: 18px;
+    }
+    .main-title p {
+        font-size: 14px;
+    }
+}
+
 @media(max-width: 479px){
     .logo{
         font-size: 14px;
