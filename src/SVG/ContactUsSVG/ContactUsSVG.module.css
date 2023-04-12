@@ -1,0 +1,17 @@
+.contact-us-svg{
+    width: 400px;
+    height: 300px;
+}
+
+@media(max-width: 959px){
+    .contact-us-svg{
+        width: 300px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 722px) {
+    .contact-us-svg{
+        width: 250px;
+    }
+}

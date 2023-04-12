@@ -43,11 +43,11 @@ const Faculties = () => {
           </p>
         </div>
       </div>
-      <div className={classes.faculties}>
-        {faculties.map((faculty) => (
-          <Faculty faculty={faculty} key={faculty.id} />
-        ))}
-      </div>
+      {/*<div className={classes.faculties}>*/}
+      {/*  {faculties.map((faculty) => (*/}
+      {/*    <Faculty faculty={faculty} key={faculty.id} />*/}
+      {/*  ))}*/}
+      {/*</div>*/}
       <NewFaculty {...newFaculty} />
     </section>
   );

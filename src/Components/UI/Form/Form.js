@@ -8,6 +8,7 @@ const Form = ({
   long,
   additionalClassNames,
   buttonActions,
+  additionalButtonClasses,
 }) => {
   return (
     <form className={className} onSubmit={(e) => e.preventDefault()}>
@@ -21,7 +22,14 @@ const Form = ({
           {buttonText}
         </LongButton>
       )}
-      {!long && <Button buttonAction={buttonActions}>{buttonText}</Button>}
+      {!long && (
+        <Button
+          className={additionalButtonClasses}
+          buttonAction={buttonActions}
+        >
+          {buttonText}
+        </Button>
+      )}
     </form>
   );
 };

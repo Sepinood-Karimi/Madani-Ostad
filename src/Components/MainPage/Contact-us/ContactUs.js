@@ -1,5 +1,5 @@
 import classes from "./ContactUs.module.css";
-import ContactUsSVG from "../../../SVG/ContactUsSVG";
+import ContactUsSVG from "../../../SVG/ContactUsSVG/ContactUsSVG";
 import Input from "../../UI/Input/Input";
 import Form from "../../UI/Form/Form";
 import { useContext, useRef } from "react";
@@ -75,7 +75,11 @@ const ContactUs = () => {
         </div>
       </div>
       <div className={classes["contact-us__form"]}>
-        <Form buttonText={submitButtonText} buttonActions={contactUs}>
+        <Form
+          buttonText={submitButtonText}
+          buttonActions={contactUs}
+          additionalButtonClasses={classes["contact-us-btn"]}
+        >
           <Input
             id="name"
             type="text"
