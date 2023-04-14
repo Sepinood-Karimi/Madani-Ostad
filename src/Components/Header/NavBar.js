@@ -129,7 +129,7 @@ const NavBar = () => {
             {!loginCtx.isLoggedIn && (
               <Button
                 buttonAction={loginModal.open}
-                className={classes["menu__item-button"]}
+                additionalClassNames={classes["menu__item-button"]}
               >
                 ورود <i className="fa fa-user" aria-hidden="true"></i>
               </Button>
