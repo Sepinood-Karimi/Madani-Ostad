@@ -14,7 +14,7 @@ const Teacher = React.lazy(() =>
 
 function App() {
     const gtmParams = {
-        id: 'GTM-ID',
+        id: 'GTM-MJNJ64CQ',
         dataLayerName: 'customDataLayerName'
     }
   return (
