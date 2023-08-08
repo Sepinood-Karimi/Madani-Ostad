@@ -10,7 +10,6 @@ import LoginContext from "store/login-context";
 import RedButton from "../UI/Button/RedButton/RedButton";
 import Toastify from "toastify-js";
 import classnames from "classnames";
-import {useGTMDispatch} from "@elgorditosalsero/react-gtm-hook";
 
 const NavBar = () => {
   const loginCtx = useContext(LoginContext);
@@ -51,16 +50,14 @@ const NavBar = () => {
       window.removeEventListener("resize", onWindowResize);
     };
   }, []);
-  const sendDataToGTM = useGTMDispatch()
 
-  const handleClick = () => sendDataToGTM({ event: 'awesomeButtonClicked', value: 'imAwesome' })
   return (
     <header className={classes.header}>
       <div>
         <h3 className={classes.logo}>مدنی استاد </h3>
         <span className={classes["main-title"]}>
           <h2>LOGO</h2>
-          <p onClick={handleClick}>!این بار تو به اساتید نمره بده</p>
+          <p>!این بار تو به اساتید نمره بده</p>
         </span>
       </div>
       <Search placeholder="دنبال کدوم استاد می گردی ؟" />
